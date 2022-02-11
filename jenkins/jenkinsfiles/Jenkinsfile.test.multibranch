@@ -1,8 +1,8 @@
-def String determineRepoName() {
+String determineRepoName() {
     return scm.getUserRemoteConfigs()[0].getUrl().tokenize('/').last().split("\\.")[0]
 }
 
-def String getTargetEnv() {
+String getTargetEnv() {
   if (env.GIT_BRANCH == "main") {
       return "production"
   } else if (env.GIT_BRANCH == "staging") {
