@@ -31,6 +31,7 @@ pipeline {
         stage('Version') {
             steps {
                 script {
+                    sh 'echo' + env.GIT_BRANCH
                     env.APP_VERSION = '0.0.1'
                     sh 'echo ' + env.APP_VERSION
                     determineRepoName()
