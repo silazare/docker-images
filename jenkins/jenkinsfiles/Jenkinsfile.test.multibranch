@@ -32,12 +32,11 @@ pipeline {
             steps {
                 script {
                     env.APP_VERSION = '0.0.1'
+                    determineRepoName()
+                    getTargetEnv()
                     sh 'echo test'
                     if (fileExists('package.json')) {
                         env.APP_VERSION = sh(script: 'cat package.json | jq -r .version', returnStdout: true).trim()
-                        sh 'echo ' + env.APP_VERSION
-                    } else {
-                        env.APP_VERSION = sh(script: 'cat config/_defaults.py | grep "APP_VERSION" | cut -d"=" -f2 | xargs', returnStdout: true).trim()
                         sh 'echo ' + env.APP_VERSION
                     }
                 }
