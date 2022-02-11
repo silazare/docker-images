@@ -32,6 +32,7 @@ pipeline {
             steps {
                 script {
                     env.APP_VERSION = '0.0.1'
+                    sh 'echo ' + env.APP_VERSION
                     determineRepoName()
                     getTargetEnv()
                     sh 'echo test'
