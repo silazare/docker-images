@@ -47,7 +47,8 @@ pipeline {
             steps {
                 script {
                     if (getTargetEnv() != "" ){
-                        sh 'echo build' + determineRepoName() + ':' + env.APP_VERSION + '-' + getTargetEnv()
+                        sh 'echo build'
+                        //sh 'echo build' + determineRepoName() + ':' + env.APP_VERSION + '-' + getTargetEnv()
                      }
                 }
             }
@@ -57,7 +58,8 @@ pipeline {
             steps {
                 script {
                     if (getTargetEnv() != "" ){
-                        sh 'echo deploy' + determineRepoName() + ':' + env.APP_VERSION + '-' + getTargetEnv()
+                        sh 'echo deploy'
+                        //sh 'echo deploy' + determineRepoName() + ':' + env.APP_VERSION + '-' + getTargetEnv()
                     }
                 }
             }
