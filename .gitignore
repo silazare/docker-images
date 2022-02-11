@@ -1,0 +1,5 @@
+# Keys and secrets
+*.secret
+*.key
+*.crt
+*.pem
